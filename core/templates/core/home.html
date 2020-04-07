@@ -1,0 +1,402 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Baskervville&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Sacramento&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Rajdhani&display=swap" rel="stylesheet">
+       <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+
+<!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel='stylesheet' href="{% static 'css/style.css' %}">
+    <title>'Sanmi Adesiyan | Beinspired</title>
+</head>
+<style>
+*{
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: 'Montserrat', sans-serif;
+}
+
+nav{
+  background: #0082e6;
+  height: 80px;
+  width: 100%;
+}
+
+label.logo{
+  color: white;
+  font-size: 35px;
+  line-height: 80px;
+  padding: 0 100px;
+  font-weight: bold;
+}
+
+nav ul{
+  float: right;
+  margin-right: 20px;
+}
+
+nav ul li{
+  display: inline-block;
+  line-height: 80px;
+  margin: 0 5px;
+}
+
+nav ul li a{
+  color: white;
+  font-size: 17px;
+  padding: 7px 13px;
+  border-radius: 3px;
+  text-transform: uppercase;
+}
+
+a.active,a:hover{
+  background: #1b9bff;
+  transition: .5s;
+}
+
+.checkbtn{
+  font-size: 30px;
+  color: white;
+  float: right;
+  line-height: 80px;
+  margin-right: 40px;
+  cursor: pointer;
+  display: none;
+}
+
+#check{
+  display: none;
+}
+
+@media (max-width: 952px){
+  label.logo{
+    font-size: 30px;
+    padding-left: 50px;
+  }
+  nav ul li a{
+    font-size: 16px;
+  }
+}
+@media (max-width: 952px){
+  .checkbtn{
+    display: block;
+  }
+  ul{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: #2c3e50;
+    top: 80px;
+    left: -100%;
+    text-align: center;
+    transition: all .5s;
+  }
+  nav ul li{
+    display: block;
+    margin: 50px 0;
+    line-height: 30px;
+  }
+nav ul li a{
+  font-size: 20px;
+}
+
+  a:hover,a.active{
+    background: none;
+    color: #0082e6;
+  }
+  #check:checked ~ ul{
+    left:0;
+  }
+}
+section{
+  background: url("{% static "core/art.jpeg" %}") no-repeat;
+  background-size: cover;
+  height: calc(100vh - 80px);
+}
+/* BLOP PART*/
+
+.wrapper {
+  width: 100%;
+}
+
+.img-info {
+  width: 100%;
+}
+
+.img-info h1 {
+  padding: 30px 30px 20px;
+  font-family: 'Montserrat', cursive;
+  font-size: 50px;
+  color : #111;
+  line-height: 44px;
+  text-align: center
+}
+
+.img-info p {
+  padding: 0px 30px 20px;
+  font-family: 'Baskervville', serif;
+  font-size: 20px;
+  color : #111;
+  line-height: 24px;
+  text-align: center;
+}
+
+.img-info h5 {
+  text-decoration: none;
+  text-align: center;
+  font-family: 'Indie Flower', cursive;
+} 
+
+.blog-pics1 {
+  width: 100%;
+}
+
+.sub img{
+  padding:  20px 10px 70px;
+  float: left;
+}
+
+
+.blog-pics2 {
+  width: 50%;
+}
+.blog-pics3 {
+  width: 50%;
+}
+
+
+
+
+
+
+
+/*FOOTER*/
+.footer-links ul li{
+  text-decoration: none;
+  margin: 0 auto;
+  padding:0 100px 5px;
+}
+
+.footer-links ul li a{
+  color: black;
+  font-family: 'Indie Flower', cursive;
+}
+
+.footer-sm{
+  width: 30px;
+
+}
+
+div .footer-sm{
+  padding-top: 30px;
+}
+
+div.text{
+  padding-bottom: 10px;
+}
+
+.footer-sm img{
+  width: 300%;
+  margin-bottom: 10px;
+  padding-left: 60px;
+}
+.random  img{
+  width: 14%;
+  float: left;
+  padding:50px 10px;
+}
+.text{
+  margin-top: -6rem;
+}
+
+.text h5 {
+  font-size: 20px;
+  font-weight: 300;
+  padding-bottom: 10px;
+  text-align: center;
+  font-family: 'Baskervville', serif;
+}
+.text p {
+  font-size: 16px;
+  text-align: center;
+  font-family: 'Baskervville', serif;
+  padding-bottom: 10px;
+}
+
+.footer-links ul li{
+  text-decoration: none;
+  margin: 0 auto;
+  padding:0 100px 5px;
+}
+
+.footer-links ul li a{
+  color: black;
+  font-family: 'Indie Flower', cursive;
+}
+
+.footer-sm{
+  width: 30px;
+
+}
+
+.footer-sm img{
+  width: 300%;
+  margin-bottom: 10px;
+  padding-left: 60px;
+}
+
+ul.pagination{
+  font-size: 50px;
+}
+
+
+@media only screen and (min-width: 768px){
+  header  nav   a{
+  font-family: 'Overpass', sans-serif;
+  margin-left: 80px;
+  padding: 0 10px;
+}
+.wrapper {
+    width: 600px;
+    margin: 0 auto;
+  }
+
+}
+@media only screen and (min-width: 768px) {
+  header{
+    width: 100%;
+  }
+  #check{
+  display; none;
+  }
+  nav{
+    width: 100%;
+  }
+  header nav a {
+    width: 100%;
+    padding: 0 20px;
+    margin-left: 100px;
+  }
+  .wrapper {
+    width: 600px;
+    margin: 0 auto;
+  }
+  ul.pagination{
+    text-align: center;
+    padding-left: 100px;
+    font-size: 50px;
+}
+  
+}
+</style>
+</style>
+<body>
+  <nav>
+    <input type="checkbox" id="check">
+    <label for="check" class="checkbtn">
+      <i class="fas fa-bars"></i>
+    </label>
+    <label class='logo'>SanmiArt</label>
+    <ul>
+      <li><a class='active' href='/'>Home</a></li>
+      <li><a href='/blog'>Blog</a></li>
+      <li><a href='/about_me'>About me</a></li>
+      <li><a href='/gallery'>Gallery</a></li>
+      <li><a href='/contact'>Contact</a></li>
+    </ul>  
+  </nav>  
+  <section></section> 
+  <div class="float-left-area">
+      <div class="inner-left">
+        {% for obj in posts %}
+
+            <div class='wrapper'>
+              <article class='img-info'>
+                  <h1>{{ obj.title}}</h1>
+                    <p>{{ obj.timestamp }}</p>
+                <div>
+                     <p>{{ obj.content|truncatewords:30 }}...</p>
+                      <h5><a href='/{{obj.slug}}/'>Read More</a></h5>
+                </div>
+              </article>
+        {% if obj.image1 %}
+          <img class='blog-pics1' src='{{ obj.image1.url }}' alt='blog pictures' />
+        {% endif %}
+      <div class='sub'>
+        {% if obj.image2 %}
+        <div class='sub2'>
+            <img class='blog-pics2' src='{{ obj.image2.url }}' alt='blog pictures' />
+        </div>
+        {% endif %}
+        {% if obj.image3 %}
+          <img class='blog-pics3' src='{{ obj.image3.url }}' alt='blog pictures' /><hr>
+    
+        {% endif %}
+      </div></div>
+
+
+      
+    {% endfor %}
+  {% if posts.has_other_pages %}
+  <ul class="pagination">
+    {% if posts.has_previous %}
+      <li><a href="?page={{ posts.previous_page_number }}">&laquo;</a></li>
+    {% else %}
+      <li class="disabled"><span>&laquo;</span></li>
+    {% endif %}
+    {% for i in posts.paginator.page_range %}
+      {% if posts.number == i %}
+        <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
+      {% else %}
+        <li><a href="?page={{ i }}">{{ i }}</a></li>
+      {% endif %}
+    {% endfor %}
+    {% if posts.has_next %}
+      <li><a href="?page={{ posts.next_page_number }}">&raquo;</a></li>
+    {% else %}
+      <li class="disabled"><span>&raquo;</span></li>
+    {% endif %}
+  </ul>
+  {% endif %}
+ 
+<footer>
+  <div class='footer-sm'>
+    <a href="#">
+      <a href="https://www.twitter.com/ "><img src="{% static 'img/twittericon.png' %}"/></a>
+      <a href="https://www.instagram.com/sanmi_art"><img src="{% static 'img/instagramicon.jpg' %}"/></a>
+      <a href="https://www.facebook.com/adesiyan.oluwasanmi.3?ref=bookmarks"><img src="{% static 'img/facebookicon.png' %}"/></a>
+      <a href="https://www.youtube.com/"><img src="{% static 'img/youtubeicon.png' %}"/></a>
+    </a>
+  </div>    
+  
+  <div class='text'>
+    <h5>SanmiArt | 2020</h5>
+    <p>Be Inspired....</p>
+  </div>
+  </div>
+</footer>
+</body>
+</html>

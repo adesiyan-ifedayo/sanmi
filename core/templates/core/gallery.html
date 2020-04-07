@@ -1,0 +1,143 @@
+{% extends 'core/base.html' %}
+{% block content %}
+<style>
+	h1 {
+		padding: 60px;
+		font-family: montserrat, cursive;
+    text-align: center;
+	}
+	.new p{
+		text-align: center;
+		font-size: 16px;
+		font-family: 'Baskervville', serif;
+
+	}
+  .wrapper {
+  width: 100%;
+}
+
+.img-info {
+  width: 100%;
+}
+
+.img-info h1 {
+  padding: 30px 30px 20px;
+  font-family: 'Dancing Script', cursive;
+  font-size: 50px;
+  color : #111;
+  line-height: 44px;
+}
+
+.img-info p {
+  padding: 0px 30px 20px;
+  font-family: 'Baskervville', serif;
+  font-size: 20px;
+  color : #111;
+  line-height: 24px;
+}
+
+.img-info h5 {
+  text-decoration: none;
+  text-align: center;
+  font-family: 'Indie Flower', cursive;
+} 
+
+.blog-pics {
+  
+}
+
+.sub img{
+  padding:  20px 10px 70px;
+  float: left;
+}
+.blog-pics {
+  width: 100%;
+}
+
+.sub img{
+  padding:  20px 10px 70px;
+  float: left;
+}
+
+
+.blog-pics2 {
+  width: 50%;
+}
+.img-info h1{
+  padding-top: 100px;
+  text-align: center;
+}
+
+
+.blog-pics2 {
+  width: 50%;
+}
+.blog-pics3 {
+  width: 50%;
+}
+    .container{
+        padding-top: 100px;
+    }
+    @media only screen and (min-width: 768px) {
+    header{
+        width: 100%;
+    }
+    nav{
+        width: 100%;
+    }
+    header nav a {
+        width: 100%;
+        padding: 0 20px;
+        margin-left: 100px;
+    }
+    .containers {
+        padding-left: 20px;
+        padding-right: 10px;
+    }
+    img{
+      width: 50%;
+      height: 50%;
+    }
+    .wrapper {
+    width: 600px;
+    margin: 0 auto;
+    }
+    }
+</style>
+<h1> Art Collection</h1>
+{% for obj in pics %}
+<div class='wrapper'>
+  
+  {% if obj.image1 %}
+                  <img class='blog-pics' src='{{ obj.image1.url }}' alt='first-blog-pictures' />
+  {% endif %}<hr>
+  {% if obj.image2 %}
+                  <img class='blog-pics' src='{{ obj.image2.url }}' alt='first-blog-pictures' /><hr>
+  {% endif %}
+  {% if obj.image3 %}
+                  <img class='blog-pics' src='{{ obj.image3.url }}' alt='first-blog-pictures' /><hr>
+  {% endif %}
+  {% if obj.image4 %}
+                  <img class='blog-pics' src='{{ obj.image4.url }}' alt='first-blog-pictures' /><hr>
+  {% endif %}
+  {% if obj.image5 %}
+                  <img class='blog-pics' src='{{ obj.image5.url }}' alt='first-blog-pictures' /><hr>
+  {% endif %}
+  {% if obj.image6 %}
+                  <img class='blog-pics' src='{{ obj.image6.url }}' alt='first-blog-pictures' /><hr>
+  {% endif %}
+  {% if obj.image7 %}
+                  <img class='blog-pics' src='{{ obj.image7.url }}' alt='first-blog-pictures' /><hr>
+  {% endif %}<hr>
+  {% if obj.video %}
+    <div class="container">
+      
+        <video  width="300" height="255"controls autoplay loop>
+         <source src="{{ obj.video.url }}" type="video/mp4">
+      </video>
+      </div>
+    </div>  
+  {% endif %}  
+</div>  
+{% endfor %}
+{% endblock %}

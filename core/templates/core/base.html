@@ -1,0 +1,284 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Baskervville&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Sacramento&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Rajdhani&display=swap" rel="stylesheet">
+    <!--Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+
+<!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel='stylesheet' href="{% static 'css/style.css' %}">
+    <title>SanmiArt | Beinspired</title>
+</head>
+<style>
+*{
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: 'Montserrat', sans-serif;
+}
+
+nav{
+  background: white;
+  height: 80px;
+  width: 100%;
+}
+
+label.logo{
+  color: #0082e6;
+  font-size: 35px;
+  line-height: 80px;
+  padding: 0 100px;
+  font-weight: bold;
+}
+
+nav ul{
+  float: right;
+  margin-right: 20px;
+}
+
+nav ul li{
+  display: inline-block;
+  line-height: 80px;
+  margin: 0 5px;
+}
+
+nav ul li a{
+  color: 0082e6;
+  font-size: 17px;
+  padding: 7px 13px;
+  border-radius: 3px;
+  text-transform: uppercase;
+}
+
+a.active,a:hover{
+  background: #1b9bff;
+  transition: .5s;
+}
+
+.checkbtn{
+  font-size: 30px;
+  color: #0082e6;
+  float: right;
+  line-height: 80px;
+  margin-right: 40px;
+  cursor: pointer;
+  display: none;
+}
+
+#check{
+  display: none;
+}
+
+@media (max-width: 952px){
+  label.logo{
+    font-size: 30px;
+    padding-left: 50px;
+  }
+  nav ul li a{
+    font-size: 16px;
+    color: white;
+  }
+}
+@media (max-width: 952px){
+  .checkbtn{
+    display: block;
+  }
+  ul{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: #2c3e50;
+    top: 80px;
+    left: -100%;
+    text-align: center;
+    transition: all .5s;
+  }
+  nav ul li{
+    display: block;
+    margin: 50px 0;
+    line-height: 30px;
+  }
+nav ul li a{
+  font-size: 20px;
+}
+
+  a:hover,a.active{
+    background: none;
+    color: #0082e6;
+  }
+  #check:checked ~ ul{
+    left:0;
+  }
+}
+
+
+
+
+
+
+/*FOOTER*/
+.footer-links ul li{
+  text-decoration: none;
+  margin: 0 auto;
+  padding:0 100px 5px;
+}
+
+.footer-links ul li a{
+  color: black;
+  font-family: 'Indie Flower', cursive;
+}
+
+.footer-sm{
+  width: 30px;
+
+}
+
+.footer-sm img{
+  width: 300%;
+  margin-bottom: 10px;
+  padding-left: 60px;
+}
+.random  img{
+  width: 14%;
+  float: left;
+  padding:50px 10px;
+}
+
+.text h5 {
+  font-size: 20px;
+  font-weight: 300;
+  padding-bottom: 50px;
+  text-align: center;
+  font-family: 'Baskervville', serif;
+}
+.text p {
+  font-size: 16px;
+  text-align: center;
+  font-family: 'Baskervville', serif;
+}
+
+.footer-links ul li{
+  text-decoration: none;
+  margin: 0 auto;
+  padding:0 100px 5px;
+}
+
+.footer-links ul li a{
+  color: black;
+  font-family: 'Indie Flower', cursive;
+}
+
+.footer-sm{
+  width: 30px;
+  float: left;
+
+}
+
+.footer-sm img{
+  width: 300%;
+  margin-bottom: 10px;
+  padding-left: 60px;
+  float: left;
+}
+
+
+@media only screen and (min-width: 1300px){
+  header  nav   a{
+  font-family: 'Overpass', sans-serif;
+  margin-left: 80px;
+  padding: 0 10px;
+}
+}
+@media only screen and (min-width: 768px) {
+  header{
+    width: 100%;
+  }
+  #check{
+  display; none;
+  }
+  nav{
+    width: 100%;
+  }
+  header nav a {
+    width: 100%;
+    padding: 0 20px;
+    margin-left: 100px;
+  }
+  .wrapper {
+    width: 600px;
+    margin: 0 auto;
+  }
+}
+</style>
+</style>
+<body>
+  <nav>
+    <input type="checkbox" id="check">
+    <label for="check" class="checkbtn">
+      <i class="fas fa-bars"></i>
+    </label>
+    <label class='logo'>SanmiArt</label>
+    <ul>
+      <li><a href='/'>Home</a></li>
+      <li><a href='/blog'>Blog</a></li>
+      <li><a href='/about_me'>About me</a></li>
+      <li><a href='/gallery'>Gallery</a></li>
+      <li><a href='/contact'>Contact</a></li>
+    </ul>  
+  </nav>  
+    
+
+{% block content %}
+
+{% endblock  %}
+<footer>
+
+
+  <hr>
+  <!--<div class='footer-links'>
+      <ul>
+        <li><a href="https://www.instagram.com/letsaygreys">Instagram</a></li>
+        <li><a href="https://www.twitter.com/TruthsnGreys ">Twitter</a></li>
+        <li><a href="https://www.youtube.com/TruthsnGreys">Youtube</a></li>
+        <li><a href="https://www.facebook.com/TruthsnGreys">Facebook</a></li> 
+      </ul>
+  </div>-->
+<div class='container'>  
+  <div class='footer-sm'>
+    <a href="#">
+      <a href="https://www.twitter.com/ "><img src="{% static 'img/twittericon.png' %}"/></a>
+      <a href="https://www.instagram.com/sanmi_art"><img src="{% static 'img/instagramicon.jpg' %}"/></a>
+      <a href="https://www.facebook.com/adesiyan.oluwasanmi.3?ref=bookmarks"><img src="{% static 'img/facebookicon.png' %}"/></a>
+      <a href="https://www.youtube.com/"><img src="{% static 'img/youtubeicon.png' %}"/></a>
+    </a>
+  </div>     
+  <div class='text'>
+    <h5>SanmiArt | 2020</h5>
+    <p>Be Inspired...</p>
+  </div>
+</div> 
+</footer>
+</body>
+</html>

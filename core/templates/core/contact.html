@@ -1,0 +1,226 @@
+{% extends 'core/base.html' %}
+{% block content %}
+<style>
+div.contact{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background: url(sanmi.jpg);
+    background-size: cover;
+    background-position: center;
+    font-family: sans-serif;
+}
+
+.contact-title{
+    margin-top: 100px;
+    color: grey;
+    
+    transition: all 2s ease-in-out;
+}
+.contact-title h1{
+    font-size: 40px;
+    line-height: 30px;
+    font-weight: 2000px;
+}
+.contact-title{
+    font-size: 16px;
+}/*
+.container{
+    padding-left: 250px;
+    padding-right: 250px;
+}
+
+div.contact-form{
+    
+}
+form{
+    margin-top: 50px;
+    transition: all 2s ease-in-out;
+}
+
+
+.form-control{
+    width: 600px;
+    background: transparent;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid gray;
+    color: #fff;
+    font-size: 18px;
+    margin-bottom: 16px;
+}
+
+input{
+    height: 45px;
+
+}
+form .submit{
+    background: #0082e6;
+    border-color: transparent;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    height: 50px;
+    margin-top: 20px;
+}*/
+
+form .submit{
+    background-color: #0082e6;
+    cursor: pointer;
+}
+
+@media only screen and (min-width: 758px){
+    form#contact-form{
+        padding-left: 200px;
+        padding-top: 10px;
+    }
+}
+
+@media only screen and (min-width: 1000px){
+   div.contact-form{
+    margin-left: -35rem;
+   }
+}
+@media (max-width: 952px){
+    div.contact{
+        margin: 0;
+        padding-right: 30px;
+        text-align: center;
+        background: url(sanmi.jpg);
+        background-size: cover;
+        background-position: center;
+        font-family: sans-serif; 
+    }
+    .contact-title{
+    margin-top: 100px;
+    color: grey;
+    text-align: center;
+    transition: all 4s ease-in-out;
+}
+.contact-title h1{
+    text-align: center;
+    font-size: 30px;
+    line-height: 30px;
+}
+.contact-title h2{
+    font-size: 15px;
+}
+form{
+    margin-top: 20px;
+    transition: all 4s ease-in-out;
+}
+.form-control{
+    width: 250px;
+    background: transparent;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid gray;
+    color: #fff;
+    font-size: 12px;
+    margin-bottom: 16px;
+}
+.container{
+    padding-left: 50px;
+}
+
+
+
+
+    .contact-form{
+        padding-left: 50px;
+        padding-right: 20px;
+    }
+
+}    
+
+
+</style>
+<div class='contact'>
+    <div class="contact-title">
+        <h1>CONTACT US</h1>
+        <h2>For Inquiries and collaborations</h2>
+        <p style="color:black;">Email: adesiyansanmi@gmail.com</p>
+    </div>
+    <div class='container'>
+        <form class='post-form' method="post">{% csrf_token %}
+            <input name='name' type='text' class='form-control' placeholder='Your Name' required><br>
+
+            <input name='email' type='text' class='form-control' placeholder='Your Email' required><br>
+            <input name='number' type='text' class='form-control' placeholder='Your Phone Number' required><br>
+
+            <textarea name='message' type='text' class='form-control' placeholder='Message' rows="4" required></textarea><br>
+            <input type='submit' class="form-control submit" value="SEND MESSAGE">
+
+        </form> 
+        <!-- <form method="POST" class="post-form">{% csrf_token %}
+        <input name='author' type='text' class='form-control' placeholder='name' required><br>
+
+            <textarea name='text' type='text' class='form-control' placeholder='comment' rows="4" required></textarea><br>
+          <input type='submit' class="form-control submit" value="COMMENT"><br> -->
+        
+    </form><br>   
+    </div>
+
+    </div>
+</div>    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--	<div class='new'>	
+		<h1>Contact</h1>
+		<p>For collaborations and inquiries, please 
+			contact 
+		<p>adesiyansanmi@gmail.com</p>
+		<p>DROP A MESSAGE FOR SANMI!</p>
+	</div>
+	  <div class="card">
+        <div class="card-body">
+          <div class="jumbotron">
+            <div class="container">
+                <form method="POST" enctype='multipart/form-data'>{% csrf_token %}
+                        
+                        <div class="form-group">
+                            <input type="text" class="form-control" name='name' id="name" placeholder="NAME">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" name='email' id="email" placeholder="EMAIL">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" name='number' id="number" placeholder="PHONE NUMBER">
+                        </div>
+
+                        <div class="form-group">
+                             <textarea class="form-control" name='message' placeholder='MESSAGE' id="exampleFormControlTextarea1" rows="4"></textarea>
+                        </div>
+                    
+                    
+                    </fieldset>
+                    <button type='submit' >Send</button>
+                         
+                </form>
+                
+            </div> 
+        </div>
+    </div>
+</div>-->
+
+
+{% endblock %}

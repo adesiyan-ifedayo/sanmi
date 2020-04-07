@@ -1,0 +1,28 @@
+{% extends 'core/base.html' %}
+{% block content %}
+<style>
+  .new h1 {
+    padding: 60px;
+    font-family: montserrat, cursive;
+    text-align: center;
+  }
+  .new h3{
+    text-align: center;
+  }
+  .new p{
+    text-align: center;
+    font-size: 16px;
+    font-family: 'Baskervville', serif;
+
+  }
+</style>
+  <div class='new'> 
+    <h1>About Me</h1>
+    <div class='container'>
+      {% for obj in abm %}
+          <p>{{ obj.aboutme }}</p>
+      {% endfor %} <br>  
+    </div>   
+   
+  </div><br>
+{% endblock %}

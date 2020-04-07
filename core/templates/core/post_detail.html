@@ -1,0 +1,163 @@
+{% extends 'core/base.html' %}
+{% block content %}
+<style>
+  .categories {
+    padding-top: 70px;
+    padding-bottom: 30px;
+  }
+  .categories h3{
+    text-align:  center;
+    font-family: 'Dancing Script', cursive;
+    font-size:  24px;
+    text-decoration: none;
+  }
+
+  .categories li{
+    text-align:  center;
+    font-size:  16px;
+    font-family: 'Baskervville', serif;
+    text-decoration: none;
+  }
+
+  .recent-posts {
+    padding-top: 30px;
+    padding-bottom: 70px;
+  }
+  .recent-posts h3{
+    text-align:  center;
+    font-family: 'Dancing Script', cursive;
+    font-size:  24px;
+    text-decoration: none;
+  }
+
+  .recent-posts li{
+    text-align:  center;
+    font-family: 'Baskervville', serif;
+    font-size:  16px;
+    text-decoration: none;
+  }
+
+  form .username{
+    padding: 10px 20px 10px;
+    margin: 0 auto;
+    font-size: 16px;
+    font-family: 'Baskervville', serif;
+  }
+
+  }
+  .comments {
+    width: 100%;
+ }
+ .comments p {
+  padding: 0px 60px 5px;
+  font-family: 'Baskervville', serif;
+  font-size: 20px;
+  color : #111;
+  line-height: 24px;
+}
+ .comments footer {
+  padding: 0px 60px 5px;
+  font-family: 'Baskervville', serif;
+  font-size: 19px;
+  color : #111;
+  line-height: 24px;
+}
+.blog-pics {
+  width: 100%;
+}
+
+.sub img{
+  padding:  20px 10px 70px;
+  float: left;
+}
+
+
+.blog-pics2 {
+  width: 50%;
+}
+.img-info h1{
+  padding-top: 100px;
+  text-align: center;
+}
+article.img-info{
+  padding-left:5px;
+}
+h3{
+  text-align: center;
+}
+
+</style>
+
+
+<div class='wrapper'>
+	<article class='img-info'><h1>{{ post.title }}</h1></article>
+	{% if post.image1 %}
+                  <img class='blog-pics' src='{{ post.image1.url }}' alt='first-blog-pictures' />
+  {% endif %}<hr>
+  <article class='img-info'> 
+	   <p>{{ post.content|linebreaks }}</p>
+  </article>
+  {% if post.image2 %}
+                  <img class='blog-pics' src='{{ post.image2.url }}' alt='first-blog-pictures' /><hr>
+  {% endif %}
+  {% if post.image3 %}
+                  <img class='blog-pics' src='{{ post.image3.url }}' alt='first-blog-pictures' /><hr>
+  {% endif %}
+  {% if post.image4 %}
+                  <img class='blog-pics' src='{{ post.image4.url }}' alt='first-blog-pictures' /><hr>
+  {% endif %}
+  {% if post.image5 %}
+                  <img class='blog-pics' src='{{ post.image5.url }}' alt='first-blog-pictures' /><hr>
+  {% endif %}
+  {% if post.image6 %}
+                  <img class='blog-pics' src='{{ post.image6.url }}' alt='first-blog-pictures' /><hr>
+  {% endif %}
+  {% if post.image7 %}
+                  <img class='blog-pics' src='{{ post.image7.url }}' alt='first-blog-pictures' /><hr>
+  {% endif %}
+  {% if post.video %}
+    <div class="container">
+      
+        <video  width="300" height="255"controls autoplay loop>
+         <source src="{{ post.video.url }}" type="video/mp4">
+      </video>
+      </div>
+    </div>  
+  {% endif %}   
+</div><br>	
+<br>
+<div>
+<div class='container'>	
+  <h3>Comments</h3>
+{% for comment in commentss %}
+    {% if user.is_authenticated or comment.approved_comment %}
+    <div class="comment">
+        <div class="date">
+            <strong>{{ comment.author }} </strong>|<small> {{ comment.created_date }}</small>
+            {% if not comment.approved_comment %}
+                <a class="btn btn-default" href=""><span class="glyphicon glyphicon-remove"></span></a>
+                <a class="btn btn-default" href=""><span class="glyphicon glyphicon-ok"></span></a>
+            {% endif %}
+        </div>
+        
+        <p>{{ comment.text|linebreaks }}</p><hr>
+    </div>
+    {% endif %}
+{% empty %}
+    <p>No comments here yet :(</p>
+{% endfor %}
+<h3>Add a comment</h3>
+    <form method="POST" class="post-form">{% csrf_token %}
+        <input name='author' type='text' class='form-control' placeholder='name' required><br>
+
+            <textarea name='text' type='text' class='form-control' placeholder='comment' rows="4" required></textarea><br>
+          <input type='submit' class="form-control submit" value="COMMENT"><br>
+        
+    </form><br>
+</div>
+</div>  
+
+
+
+
+{% endblock %}
